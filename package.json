@@ -1,0 +1,35 @@
+{
+  "name": "easy-e2e-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "https://github.com/arhs-spikeseed-mobile/easy-e2e-mobile.git",
+  "author": "Lorenzo Greco <lorenzo.greco@arhs-spikeseed.com>",
+  "license": "MIT",
+  "scripts": {
+    "e2e:local:build:ios": "sh scripts/e2e.local.ios.sh --build",
+    "e2e:local:build:android": "sh scripts/e2e.local.android.sh --build",
+    "e2e:local:run:ios": "concurrently \"npx appium --allow-cors\" \"sh scripts/e2e.local.ios.sh --run\" -k",
+    "e2e:local:run:android": "concurrently \"emulator -avd Pixel_2_API_31\" \"yarn appium\" \"sh scripts/e2e.local.android.sh --run\" -k",
+    "e2e:browserstack:build:ios": "sh scripts/e2e.browserstack.ios.sh --build",
+    "e2e:browserstack:build:android": "sh scripts/e2e.browserstack.android.sh --build",
+    "e2e:browserstack:run:ios": "sh scripts/e2e.browserstack.ios.sh --run",
+    "e2e:browserstack:run:android": "sh scripts/e2e.browserstack.android.sh --run"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/register": "^7.18.9",
+    "@babel/runtime": "^7.18.9",
+    "@wdio/appium-service": "^7.21.0",
+    "@wdio/cli": "^7.21.0",
+    "@wdio/local-runner": "^7.21.0",
+    "@wdio/mocha-framework": "^7.21.0",
+    "@wdio/spec-reporter": "^7.21.0",
+    "appium": "^1.22.3",
+    "browserstack-local": "^1.5.1",
+    "chromedriver": "^104.0.0",
+    "concurrently": "^7.3.0",
+    "wdio-chromedriver-service": "^7.3.2"
+  }
+}
