@@ -5,9 +5,7 @@ It supports local and cloud e2e testing through BrowserStack.
 
 ## Getting Started
 
-1. Clone the project
-
-   `git clone https://github.com/arhs-spikeseed-mobile/easy-e2e-mobile.git`
+1. Download and extract a copy of this project
 
 2. Rename the file `configs/.env.template` to `configs/.env` and fill the configuration variables
 
