@@ -19,7 +19,9 @@ It supports local and cloud e2e testing through BrowserStack.
 
 5. _Optional_: Edit the WebdriverIO configs located in the `configs` folder
 
-6. Run one of the available scripts
+6. _Optional_: Add a prebuild script, check `package.json` `scripts` section.
+
+7. Run one of the available scripts
 
 ## Available scripts
 
