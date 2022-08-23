@@ -11,17 +11,13 @@ It supports local and cloud e2e testing through BrowserStack.
 
 2. Rename the file `configs/.env.template` to `configs/.env` and fill the configuration variables
 
-3. Install the dependencies
+3. iOS only: Create the file `configs/export_options.plist`
 
-   `yarn`
+4. _Optional_: Edit the WebdriverIO configs located in the `configs` folder
 
-4. iOS only: Create the file `configs/export_options.plist`
+5. _Optional_: Add a prebuild script, check `package.json` `scripts` section.
 
-5. _Optional_: Edit the WebdriverIO configs located in the `configs` folder
-
-6. _Optional_: Add a prebuild script, check `package.json` `scripts` section.
-
-7. Run one of the available scripts
+6. Run one of the available scripts
 
 ## Available scripts
 
