@@ -12,10 +12,4 @@ function yellow {
   printf "${YELLOW}$@${NC}\n"
 }
 
-export E2E_DIR=$(basename $E2E_SPECS_PATH)
-
-rm -rf tmp/$E2E_DIR
-
-mkdir -p tmp/
-
-cp -R $E2E_SPECS_PATH tmp/$E2E_DIR/
+export E2E_DIR=$E2E_SPECS_PATH

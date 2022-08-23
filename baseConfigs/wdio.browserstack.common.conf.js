@@ -1,11 +1,11 @@
 import path from "path";
 
-exports.config = {
+export const commonBaseConfig = {
   user: process.env.BS_USER,
   key: process.env.BS_KEY,
 
   updateJob: false,
-  specs: [path.join("tmp", process.env.E2E_DIR, process.env.E2E_SPECS_PATTERN)],
+  specs: [path.join(process.env.E2E_DIR, process.env.E2E_SPECS_PATTERN)],
   exclude: [],
   logLevel: "info",
   coloredLogs: true,
