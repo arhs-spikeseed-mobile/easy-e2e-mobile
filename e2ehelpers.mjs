@@ -1,4 +1,4 @@
-export async function waitForAppLaunch(seconds = 10000) {
+export async function wait(seconds = 10 * 1000) {
   await new Promise((r) => setTimeout(r, seconds));
 }
 
@@ -11,5 +11,5 @@ export async function relaunchApp() {
   } else {
     await driver.reset();
   }
-  await waitForAppLaunch();
+  await wait(20 * 1000);
 }
