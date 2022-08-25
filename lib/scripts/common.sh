@@ -14,4 +14,11 @@ function yellow {
 
 export E2E_DIR=$E2E_SPECS_PATH
 
+# Install deps
 yarn
+
+# Generate tsconfig.json
+npx tsconfig.js --once
+
+# Compile e2e tests
+npx tsc || true

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load common
-. scripts/common.sh
+. lib/scripts/common.sh
 
 if [ "$1" == "--build" ]; then
   rm -rf $(pwd)/tmp/ios
