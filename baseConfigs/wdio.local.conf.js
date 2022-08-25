@@ -1,6 +1,6 @@
-import path from "path";
+const path = require("path");
 
-export const baseConfig = {
+exports.baseConfig = {
   //
   // ====================
   // Runner Configuration
@@ -23,7 +23,7 @@ export const baseConfig = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: [path.join(process.env.E2E_DIR, process.env.E2E_SPECS_PATTERN)],
+  specs: [path.join(".tsbuild", process.env.E2E_SPECS_PATTERN)],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -67,6 +67,11 @@ export const baseConfig = {
       path: "/wd/hub",
     },
   ].filter(Boolean),
+
+  autoCompileOpts: {
+    autoCompile: false,
+  },
+
   //
   // ===================
   // Test Configurations

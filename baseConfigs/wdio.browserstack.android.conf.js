@@ -1,6 +1,7 @@
-import { commonBaseConfig } from "./wdio.browserstack.common.conf.js";
+const commonBaseConfig =
+  require("./wdio.browserstack.common.conf").commonBaseConfig;
 
-export const baseConfig = {
+exports.baseConfig = {
   ...commonBaseConfig,
 
   capabilities: [

@@ -1,11 +1,11 @@
-import path from "path";
+const path = require("path");
 
-export const commonBaseConfig = {
+exports.commonBaseConfig = {
   user: process.env.BS_USER,
   key: process.env.BS_KEY,
 
   updateJob: false,
-  specs: [path.join(process.env.E2E_DIR, process.env.E2E_SPECS_PATTERN)],
+  specs: [path.join(".tsbuild", process.env.E2E_SPECS_PATTERN)],
   exclude: [],
   logLevel: "info",
   coloredLogs: true,
@@ -19,6 +19,10 @@ export const commonBaseConfig = {
   mochaOpts: {
     ui: "bdd",
     timeout: 40000,
+  },
+
+  autoCompileOpts: {
+    autoCompile: false,
   },
 
   beforeTest: function (test, context) {

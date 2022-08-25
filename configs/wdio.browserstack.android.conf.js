@@ -1,7 +1,7 @@
-import { baseConfig } from "../baseConfigs/wdio.browserstack.android.conf";
+const baseConfig =
+  require("../baseConfigs/wdio.browserstack.android.conf").baseConfig;
 
 // Add your custom configurations here
-
-export const config = {
+exports.config = {
   ...baseConfig,
 };

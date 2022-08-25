@@ -1,7 +1,6 @@
-import { baseConfig } from "../baseConfigs/wdio.local.conf";
+const baseConfig = require("../baseConfigs/wdio.local.conf").baseConfig;
 
 // Add your custom configurations here
-
-export const config = {
+exports.config = {
   ...baseConfig,
 };
