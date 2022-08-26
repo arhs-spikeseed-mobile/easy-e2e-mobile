@@ -26,6 +26,11 @@ if [ "$1" == "--run" ]; then
         echo "$(yellow 🔧 Cannot find the build/s)"
     else
         echo "$(yellow 🔧 run wdio .apk)"
-        npx wdio configs/wdio.local.conf.js $2 $3
+        
+        if [ "$2" == "--spec" ]; then
+            FIX_SPEC_PATH=$(node -pe '(".build/"+process.argv[1].slice(process.argv[1].indexOf("__e2e__"))).replace(".ts",".js")' $(realpath $3))
+        fi
+
+        npx wdio configs/wdio.local.conf.js $2 $FIX_SPEC_PATH
     fi
 fi

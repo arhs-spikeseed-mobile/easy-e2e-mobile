@@ -22,5 +22,9 @@ if [ "$1" == "--run" ]; then
 
   export BS_PATH=$(node -pe 'JSON.parse(process.argv[1]).app_url' $RESULT)
 
-  npx wdio $(pwd)/configs/wdio.browserstack.ios.conf.js $2 $3
+  if [ "$2" == "--spec" ]; then
+    FIX_SPEC_PATH=$(node -pe '(".build/"+process.argv[1].slice(process.argv[1].indexOf("__e2e__"))).replace(".ts",".js")' $(realpath $3))
+  fi
+
+  npx wdio configs/wdio.local.conf.js $2 $FIX_SPEC_PATH
 fi
