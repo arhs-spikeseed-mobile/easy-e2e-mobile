@@ -22,5 +22,5 @@ if [ "$1" == "--run" ]; then
 
   export BS_PATH=$(node -pe 'JSON.parse(process.argv[1]).app_url' $RESULT)
 
-  npx wdio $(pwd)/configs/wdio.browserstack.ios.conf.js
+  npx wdio $(pwd)/configs/wdio.browserstack.ios.conf.js $2 $3
 fi

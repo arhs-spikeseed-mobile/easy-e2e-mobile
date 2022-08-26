@@ -21,8 +21,8 @@ It supports local and cloud e2e testing through BrowserStack.
 
 - `e2e:local:build:ios` - Build the iOS app for local e2e testing
 - `e2e:local:build:android` - Build the Android app for local e2e testing
-- `e2e:local:run:ios` - Run Local iOS e2e testing
-- `e2e:local:run:android` - Run Local Android e2e testing
+- `e2e:local:run:ios` - Run Local iOS e2e testing, pass `--spec path/to/spec` to run a specific test
+- `e2e:local:run:android` - Run Local Android e2e testing, pass `--spec path/to/spec` to run a specific test
 - `e2e:browserstack:build:ios` - Build the iOS app for remote BrowserStack e2e testing
 - `e2e:browserstack:build:android` - Build the Android app for remote BrowserStack e2e testing
 - `e2e:browserstack:run:ios` - Run remote BrowserStack iOS e2e testing

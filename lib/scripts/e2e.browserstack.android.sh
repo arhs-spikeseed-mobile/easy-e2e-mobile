@@ -25,5 +25,5 @@ then
 
   export BS_PATH=$(node -pe 'JSON.parse(process.argv[1]).app_url' $RESULT)
 
-  npx wdio `pwd`/configs/wdio.browserstack.android.conf.js
+  npx wdio `pwd`/configs/wdio.browserstack.android.conf.js $2 $3
 fi

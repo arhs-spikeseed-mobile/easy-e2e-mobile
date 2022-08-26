@@ -10,12 +10,13 @@
     "e2e:browserstack:prebuild": "echo \"Your prebuild command here\"",
     "e2e:local:build:ios": "yarn e2e:local:prebuild && sh lib/scripts/e2e.local.ios.sh --build",
     "e2e:local:build:android": "yarn e2e:local:prebuild && sh lib/scripts/e2e.local.android.sh --build",
-    "e2e:local:run:ios": "concurrently \"npx appium --allow-cors\" \"sleep 5 && sh lib/scripts/e2e.local.ios.sh --run\" -k",
-    "e2e:local:run:android": "concurrently \"emulator -avd Pixel_2_API_31\" \"yarn appium\" \"sleep 5 && sh lib/scripts/e2e.local.android.sh --run\" -k",
+    "e2e:local:run:ios": "concurrently -P \"yarn _appium\" \"sleep 5 && sh lib/scripts/e2e.local.ios.sh --run {@}\" -k --",
+    "e2e:local:run:android": "concurrently -P \"emulator -avd Pixel_2_API_31\" \"yarn _appium\" \"sleep 5 && sh lib/scripts/e2e.local.android.sh --run {@}\" -k --",
     "e2e:browserstack:build:ios": "yarn e2e:browserstack:prebuild && sh lib/scripts/e2e.browserstack.ios.sh --build",
     "e2e:browserstack:build:android": "yarn e2e:browserstack:prebuild && sh lib/scripts/e2e.browserstack.android.sh --build",
-    "e2e:browserstack:run:ios": "sh lib/scripts/e2e.browserstack.ios.sh --run",
-    "e2e:browserstack:run:android": "sh lib/scripts/e2e.browserstack.android.sh --run"
+    "e2e:browserstack:run:ios": "sh lib/scripts/e2e.browserstack.ios.sh --run --",
+    "e2e:browserstack:run:android": "sh lib/scripts/e2e.browserstack.android.sh --run --",
+    "_appium": "npx appium --allow-cors"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",

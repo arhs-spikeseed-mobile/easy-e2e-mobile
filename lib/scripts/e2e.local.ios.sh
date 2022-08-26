@@ -18,6 +18,6 @@ if [ "$1" == "--run" ]; then
         echo "$(yellow 🔧 Cannot find the build/s)"
     else
         echo "$(yellow 🔧 run wdio .ipa)"
-        npx wdio configs/wdio.local.conf.js
+        npx wdio configs/wdio.local.conf.js $2 $3
     fi
 fi
