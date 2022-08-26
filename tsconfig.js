@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   compilerOptions: {
-    outDir: "./.tsbuild/",
+    outDir: "./.build/",
     sourceMap: false,
     target: "es2019",
     module: "commonjs",
