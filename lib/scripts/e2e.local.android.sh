@@ -28,7 +28,7 @@ if [ "$1" == "--run" ]; then
         echo "$(yellow 🔧 run wdio .apk)"
         
         if [ "$2" == "--spec" ]; then
-            FIX_SPEC_PATH=$(node -pe '(".build/"+process.argv[1].slice(process.argv[1].indexOf("__e2e__"))).replace(".ts",".js")' $(realpath $3))
+            FIX_SPEC_PATH=$(node -pe '(".build"+process.argv[2].slice(process.argv[1].length).replace(".ts",".js"))' $(dirname $(realpath $E2E_SPECS_PATH)) $(realpath $3))
         fi
 
         npx wdio configs/wdio.local.conf.js $2 $FIX_SPEC_PATH
