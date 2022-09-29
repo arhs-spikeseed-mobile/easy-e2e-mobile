@@ -19,10 +19,6 @@ if [ "$1" == "--run" ]; then
     else
         echo "$(yellow 🔧 run wdio .ipa)"
 
-        if [ "$2" == "--spec" ]; then
-            FIX_SPEC_PATH=$(node -pe '(".build"+process.argv[2].slice(process.argv[1].length).replace(".ts",".js"))' $(dirname $(realpath $E2E_SPECS_PATH)) $(realpath $3))
-        fi
-
-        npx wdio configs/wdio.local.conf.js $2 $FIX_SPEC_PATH
+        npx wdio configs/wdio.local.conf.js $2 $3
     fi
 fi
